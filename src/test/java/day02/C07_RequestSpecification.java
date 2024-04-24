@@ -1,15 +1,18 @@
-package day01;
+package day02;
 
+import base_urls.RestFullBaseUrl;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class C06_QueryParameters {
+public class C07_RequestSpecification extends RestFullBaseUrl {
 
-        /*
+     /*
     Given
        https://restful-booker.herokuapp.com/booking
     When
@@ -24,11 +27,15 @@ public class C06_QueryParameters {
     public void queryParametersTest() {
 
 //        1. Set the URL
-        String url = "https://restful-booker.herokuapp.com/booking?firstname=John&lastname=Smith";
+        spec.pathParam("first","booking")           // key-value
+                .queryParams("firstname","John"         // queryParameters
+                        ,"lastname","Smith");
+
+
 //        2. Set the expected data
 
 //        3. Send the request and get the response
-        Response response = given().when().get(url);
+        Response response = given(spec).when().get("{first}");
         response.prettyPrint();
 //        4. Do Assertion
 
@@ -49,4 +56,3 @@ public class C06_QueryParameters {
                 .body("bookingid",hasSize(greaterThan(0)));
     }
 }
-

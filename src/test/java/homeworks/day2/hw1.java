@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class hw {
+public class hw1 {
     String url;
 
     Response response;
@@ -69,6 +69,6 @@ public class hw {
                 contentType(ContentType.JSON).
                 body("isEmpty()", Matchers.is(true));       // i used isempty method to check if the body is empty or no
     //
-        b
+
     }
 }
