@@ -1,14 +1,13 @@
 package day02;
 
-import base_urls.JsonPlaceHolder;
-import io.restassured.http.ContentType;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class C10_PostRequest extends JsonPlaceHolder {
+public class C10_PostRequest extends JsonPlaceHolderBaseUrl {
         /*
      Given
        1) https://jsonplaceholder.typicode.com/todos
@@ -46,21 +45,21 @@ public class C10_PostRequest extends JsonPlaceHolder {
                 "}";
 
         //For serialization, we need to declare content type. This process is repetitive action, to avoid repeation we will put this in spec object.
-       Response response =  given(spec)
-               .body(payload)
-               .when()
-               .post("{first}");
-       response.prettyPrint();
+        Response response =  given(spec)
+                .body(payload)
+                .when()
+                .post("{first}");
+        response.prettyPrint();
 
         //Send the request and get the response
 
 
         //Do assertion
 
-                response
-                        .then()
+        response
+                .then()
                 .statusCode(201)
-                        .body("userId",equalTo(55));
+                .body("userId",equalTo(55));
 
 
     }

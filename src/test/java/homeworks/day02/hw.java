@@ -1,6 +1,6 @@
-package homeworks.day03;
+package homeworks.day02;
 
-import base_urls.hw.Day03Hw;
+import base_urls.hw.Day02Hw;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class hw extends Day03Hw {
+public class hw extends Day02Hw {
 
     @Test
     public void hw1(){

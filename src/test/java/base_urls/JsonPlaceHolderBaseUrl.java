@@ -1,16 +1,16 @@
-package base_urls.hw;
+package base_urls;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeMethod;
 
-public class Day03Hw {
+public class JsonPlaceHolderBaseUrl {
     protected RequestSpecification spec;
     @BeforeMethod
     public void setUo(){
         spec = new RequestSpecBuilder()
-                .setBaseUri("https://reqres.in/api")
+                .setBaseUri("https://jsonplaceholder.typicode.com")
                 .setContentType(ContentType.JSON)
                 .build();
     }

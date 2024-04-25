@@ -1,18 +1,17 @@
 package day02;
 
-import base_urls.JsonPlaceHolder;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class C09_GroovyLanguage extends JsonPlaceHolder {
+public class C09_GroovyLanguage extends JsonPlaceHolderBaseUrl {
 
        /*
     Given

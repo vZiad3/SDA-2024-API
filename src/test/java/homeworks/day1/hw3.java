@@ -1,17 +1,16 @@
-package homeworks.day2;
+package homeworks.day1;
 
-import base_urls.hw.Day03Hw;
+import base_urls.hw.Day02Hw;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
 
-public class hw3 extends Day03Hw {
+public class hw3 extends Day02Hw {
     @Test
     public void hw3(){
  //
