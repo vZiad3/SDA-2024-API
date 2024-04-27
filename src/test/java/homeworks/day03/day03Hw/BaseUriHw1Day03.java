@@ -13,7 +13,7 @@ public class BaseUriHw1Day03 {
     @BeforeMethod
     public void setUo(){
         spec = new RequestSpecBuilder()
-                .setBaseUri("https://reqres.in")
+                .setBaseUri("https://automationexercise.com")
                 .setContentType(ContentType.JSON)
                 .build();
     }

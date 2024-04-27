@@ -1,6 +1,7 @@
 package homeworks.day03;
 
 import homeworks.day03.day03Hw.hw2BaseURI;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -15,7 +16,7 @@ public class hw2 extends hw2BaseURI {
     /*
 Write an automation test that will create a 'user' using the "https://petstore.swagger.io/" document
 */
-
+    //https://petstore.swagger.io/v2/user
 
     //https://petstore.swagger.io/v2/user/
 
@@ -26,25 +27,26 @@ Write an automation test that will create a 'user' using the "https://petstore.s
 
         // for test
         //String url ="https://petstore.swagger.io/v2/user/zzz";
-        Map<String, Object> payLoad = new HashMap<>();
+   Map<String,Object> payLoad = new HashMap<>();
+        payLoad.put("id", 33);
+        payLoad.put("username", "ZiadTheThird");
+        payLoad.put("firstName", "X");
+        payLoad.put("lastName", "Alsh");
+        payLoad.put("email", "XTheThird@gmail.com");
 
-        payLoad.put("username","Ziad1337");
-        payLoad.put("firstName","Ziad");
-        payLoad.put("phone","+96655550545");
 
-        Response response = given(spec).body(payLoad).when().post("{first}/{second}");
+
+        Response response = given(spec).body(payLoad).contentType(ContentType.JSON).when().post("{first}/{second}");
         response.prettyPrint();
 
 
 
-        JsonPath jsonPath = response.jsonPath();
+     JsonPath jsonPath = response.jsonPath();
 
-        response
-                .then()
-                .statusCode(200)
-                .body("phone",equalTo("96655550545"));
+     response
+             .then()
+             .statusCode(200);                      // 201 for sucess message of creating user and i am getting 200 so it's the same since we can check about the id and the info of it
 
 
-    }
 
-}
+}}

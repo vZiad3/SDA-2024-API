@@ -63,6 +63,7 @@ public class C09_GroovyLanguage extends JsonPlaceHolderBaseUrl {
 
 //        3)Print all 'completeds' whose ids are less than 5 on the console
 //        Assert that the number of 'completeds' whose ids are less than 5 is 4
+
         List<Boolean> completedsLessThan5 = json.getList("findAll{it.id<5}.completed");
         System.out.println("completedsLessThan5 = " + completedsLessThan5);
         assertTrue(completedsLessThan5.size()==4);
