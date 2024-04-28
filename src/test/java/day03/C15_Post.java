@@ -50,6 +50,5 @@ public class C15_Post extends JsonPlaceHolderTestData {
         Assert.assertEquals(payLoad.getUserId(),actualData.getUserId());
         Assert.assertEquals(payLoad.getTitle(),actualData.getTitle());
         Assert.assertEquals(payLoad.getCompleted(),actualData.getCompleted());
-
     }
 }

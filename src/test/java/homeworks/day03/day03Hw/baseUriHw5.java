@@ -22,4 +22,8 @@ public class baseUriHw5 {
 //}
 
     private Integer id;
+
+    public baseUriHw5(Integer id) {
+        this.id = id;
+    }
 }
