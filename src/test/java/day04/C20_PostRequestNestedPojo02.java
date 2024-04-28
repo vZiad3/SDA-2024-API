@@ -2,6 +2,7 @@ package day04;
 
 import base_urls.RestFullBaseUrl;
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
@@ -65,17 +66,39 @@ public class C20_PostRequestNestedPojo02 extends RestFullBaseUrl {
 
         assertEquals(200,response.statusCode());
         assertEquals(payload.getFirstname(),actualData.getBooking().getFirstname());
+
+
         assertEquals(payload.getLastname(),actualData.getBooking().getLastname());
         assertEquals(payload.getTotalprice(),actualData.getBooking().getTotalprice());
         assertEquals(payload.getDepositpaid(),actualData.getBooking().getDepositpaid());
+        // since we have another obj of bookingDates we gonna use it so we can access to the info and assert
         assertEquals(bookingDates.getCheckin(),actualData.getBooking().getBookingdates().getCheckin());
         assertEquals(bookingDates.getCheckout(),actualData.getBooking().getBookingdates().getCheckout());
+
         assertEquals(payload.getAdditionalneeds(),actualData.getBooking().getAdditionalneeds());
 
+//Ziad
+        Assert.assertEquals(payload.getLastname() , actualData.getBooking().getLastname());
+Assert.assertEquals(payload.getTotalprice() , actualData.getBooking().getTotalprice());
+Assert.assertEquals(payload.getDepositpaid() , actualData.getBooking().getDepositpaid());
+
+Assert.assertEquals(bookingDates.getCheckin() , actualData.getBooking().getBookingdates().getCheckin());
+Assert.assertEquals(bookingDates.getCheckout() , actualData.getBooking().getBookingdates().getCheckout());
+Assert.assertEquals(payload.getAdditionalneeds() , actualData.getBooking().getAdditionalneeds() );
+
+
+//delete
+         given(spec).when().delete("{first}",actualData.getBookingid());
+         given(spec).when().get("{first}",actualData.getBookingid());
 
 
     }
+@Test
+    public void  delete(){
 
+    spec.pathParam("first","booking");
+
+}
 
 
 }
