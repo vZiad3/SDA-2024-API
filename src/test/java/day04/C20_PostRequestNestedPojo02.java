@@ -51,7 +51,7 @@ public class C20_PostRequestNestedPojo02 extends RestFullBaseUrl {
     public void test(){
 
         // Set Url
-        spec.pathParam("first","booking");
+        spec.pathParams("first","booking");
 
         // Set Expected data
         BookingDatesPojo bookingDates = new BookingDatesPojo("2018-01-01","2019-01-01");
@@ -63,7 +63,7 @@ public class C20_PostRequestNestedPojo02 extends RestFullBaseUrl {
 
         // Do Assertions
         BookingResponsePojo actualData = response.as(BookingResponsePojo.class);        // this class will be as pojo
-
+        int bookingId = actualData.getBookingid();
         assertEquals(200,response.statusCode());
         assertEquals(payload.getFirstname(),actualData.getBooking().getFirstname());
 
@@ -88,17 +88,17 @@ Assert.assertEquals(payload.getAdditionalneeds() , actualData.getBooking().getAd
 
 
 //delete
-         given(spec).when().delete("{first}",actualData.getBookingid());
-         given(spec).when().get("{first}",actualData.getBookingid());
+        spec.pathParams("first","booking","second", bookingId);
+         given(spec).when().delete("{first}/{second}");
 
 
     }
-@Test
-    public void  delete(){
+//Test(dependsOnMethods = )
+//   public void  delete(){
 
-    spec.pathParam("first","booking");
+//   spec.pathParam("first","booking");
 
-}
+//
 
 
 }

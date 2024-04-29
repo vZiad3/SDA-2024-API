@@ -1,11 +1,22 @@
 package pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
+import org.testng.annotations.BeforeMethod;
 
 @JsonIgnoreProperties(ignoreUnknown = true)                         //////// ignore extra fields
 public class JsonPlaceHolderPojo {
     //Create private variables for each field
-
+    protected RequestSpecification spec;
+    @BeforeMethod
+    public void setUo(){
+        spec = new RequestSpecBuilder()
+                .setBaseUri("https://jsonplaceholder.typicode.com")
+                .setContentType(ContentType.JSON)
+                .build();
+    }
     private Integer userId ;
     private String title ;
     private Boolean completed ;
