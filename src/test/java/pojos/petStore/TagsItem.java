@@ -1,8 +1,16 @@
-package pojos.pet;
+package pojos.petStore;
 
-public class Category{
+public class TagsItem{
 	private String name;
 	private Integer id;
+
+	public TagsItem() {
+	}
+
+	public TagsItem(String name, Integer id) {
+		this.name = name;
+		this.id = id;
+	}
 
 	public void setName(String name){
 		this.name = name;
@@ -23,7 +31,7 @@ public class Category{
 	@Override
  	public String toString(){
 		return 
-			"Category{" + 
+			"TagsItem{" + 
 			"name = '" + name + '\'' + 
 			",id = '" + id + '\'' + 
 			"}";

@@ -1,13 +1,17 @@
-package pojos.pet;
+package pojos.petStore;
 
 import java.util.List;
 
-public class Response{
+public class petStoreResponse {
 	private List<String> photoUrls;
 	private String name;
 	private Integer id;
 	private Category category;
 	private List<TagsItem> tags;
+
+	public petStoreResponse() {
+	}
+
 	private String status;
 
 	public void setPhotoUrls(List<String> photoUrls){

@@ -1,28 +1,20 @@
 package base_urls;
 
+
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeMethod;
 
-public class petStore {
+public class DummyRestBaseUrl {
+
     protected RequestSpecification spec;
+
     @BeforeMethod
-    public void setUo(){
+    public void setUp() {
         spec = new RequestSpecBuilder()
-                .setBaseUri("https://petstore.swagger.io/v2")
+                .setBaseUri("https://dummy.restapiexample.com/api/v1")
                 .setContentType(ContentType.JSON)
                 .build();
     }
 }
-
- // {
- //     "id": 35,
- //     "username": "string",
- //     "firstName": "string",
- //     "lastName": "string",
- //     "email": "string",
- //     "password": "string",
- //     "phone": "string",
- //     "userStatus": 0
- //     }

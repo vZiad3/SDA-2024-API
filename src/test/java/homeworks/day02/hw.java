@@ -11,12 +11,12 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class hw extends Day02Hw {
 
     @Test
-    public void hw1(){
+    public void hw1() {
 //
 //      Given
 //          https://reqres.in/api/users/2
-        spec.pathParams("first","users"
-                            ,"second",2);
+        spec.pathParams("first", "users"
+                , "second", 2);
 
 //
 //      When
@@ -35,19 +35,11 @@ public class hw extends Day02Hw {
                         , "support.text", equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
 
 
-                //THIS IS HARD ASSERT BUT I AM GOING TO USE SOFT
-             //  .body("data.email",equalTo("janet.weaver@reqres.in"))
-             //  .body("data.first_name",equalTo("Janet"))
-             //  .body("data.last_name",equalTo("Weaver"))
-             //  .body("support.text",equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
-
-
-
-
-
-
-
-
+        //THIS IS HARD ASSERT BUT I AM GOING TO USE SOFT
+        //  .body("data.email",equalTo("janet.weaver@reqres.in"))
+        //  .body("data.first_name",equalTo("Janet"))
+        //  .body("data.last_name",equalTo("Weaver"))
+        //  .body("support.text",equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
 
 
 //      And

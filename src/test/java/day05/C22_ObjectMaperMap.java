@@ -59,6 +59,7 @@ public class C22_ObjectMaperMap extends JsonPlaceHolderBaseUrl {
 
             //Do assertions
             Map<String,Object>  actualData = objectMapper.readValue(response.asString(), Map.class);     // json file from response i convert it to Map
+        Map<String,Object> actual = objectMapper.readValue(response.asString(), Map.class);
         assertEquals(201,response.statusCode());
         assertEquals(payLoad.get("userId") , actualData.get("userId"));
         assertEquals(payLoad.get("title") , actualData.get("title"));
