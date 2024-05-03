@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/ziad53/IdeaProjects/Sda_2024_Api/src/test/java/day07">
+        <classes>
+            <class name="day07.C31_CreateBooking">
+                <methods>
+                    <include name="createBookingTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
