@@ -1,4 +1,4 @@
-package utilities;
+package utlilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -7,8 +7,9 @@ import static io.restassured.RestAssured.given;
 
 public class AuthenticationRestful {
 
-    public static String getToken(){
-        String url ="https://restful-booker.herokuapp.com/auth";
+
+    public static String getToken() {
+        String url = "https://restful-booker.herokuapp.com/auth";
         String payload = """
                 {
                     "username" : "admin",
@@ -16,6 +17,6 @@ public class AuthenticationRestful {
                 }""";
         Response response = given().body(payload).contentType(ContentType.JSON).post(url);
         return response.jsonPath().getString("token");
-
     }
+
 }
